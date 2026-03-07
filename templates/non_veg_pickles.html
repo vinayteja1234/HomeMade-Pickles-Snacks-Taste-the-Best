@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Non-Vegetarian Pickles - HomeMade Pickles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home" class="active">Shop</a>
+            <a href="/cart">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <header class="hero" style="height: 40vh;">
+        <img src="{{ url_for('static', filename='images/non_veg_pickles.png') }}" alt="Non-Veg Pickles"
+            class="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" style="text-align:center; padding-top:40px;">
+            <h1 style="font-size:3.5rem;">Non-Vegetarian <span>Pickles</span></h1>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">Rich & Hearty</h2>
+        <div class="products">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Chicken Pickle</h3>
+                    <p>Spicy, boneless chicken pickle made with traditional spices.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹350</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="chicken_pickle">
+                            <input type="hidden" name="name" value="Chicken Pickle">
+                            <input type="hidden" name="price" value="350">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Mutton Pickle</h3>
+                    <p>Rich and flavorful mutton chunks pickled perfectly.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹480</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="mutton_pickle">
+                            <input type="hidden" name="name" value="Mutton Pickle">
+                            <input type="hidden" name="price" value="480">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Prawn Pickle</h3>
+                    <p>Coastal style prawn pickle infused with aromatic spices.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹420</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="prawn_pickle">
+                            <input type="hidden" name="name" value="Prawn Pickle">
+                            <input type="hidden" name="price" value="420">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

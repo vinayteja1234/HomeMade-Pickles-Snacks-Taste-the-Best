@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home" class="active">Shop</a>
+            <a href="/cart">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <section class="container">
+        <h2 class="section-title">Explore Categories</h2>
+        <p class="section-subtitle">Find your favorite traditional tastes carefully crafted for you.</p>
+
+        <div class="products">
+            <a href="/veg_pickles" class="card">
+                <img src="{{ url_for('static', filename='images/veg_pickles.png') }}" alt="Vegetarian Pickles"
+                    class="card-img">
+                <div class="card-body">
+                    <h3>Vegetarian Pickles</h3>
+                    <p>Tangy, spicy, and perfectly aged. From classic Mango to fiery Lemon and Mixed Veg.</p>
+                    <div class="btn">View Collection</div>
+                </div>
+            </a>
+
+            <a href="/non_veg_pickles" class="card">
+                <img src="{{ url_for('static', filename='images/non_veg_pickles.png') }}" alt="Non-Vegetarian Pickles"
+                    class="card-img">
+                <div class="card-body">
+                    <h3>Non-Veg Pickles</h3>
+                    <p>Rich and hearty non-vegetarian pickles made with premium spices and meat.</p>
+                    <div class="btn">View Collection</div>
+                </div>
+            </a>
+
+            <a href="/snacks" class="card">
+                <img src="{{ url_for('static', filename='images/snacks.png') }}" alt="Savory Snacks" class="card-img">
+                <div class="card-body">
+                    <h3>Savory Snacks</h3>
+                    <p>Crispy, deep-fried snacks for your perfect tea-time companion.</p>
+                    <div class="btn">View Collection</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AuthenticFlavors | HomeMade Pickles & Snacks.</p>
+    </footer>
+
+</body>
+
+</html>

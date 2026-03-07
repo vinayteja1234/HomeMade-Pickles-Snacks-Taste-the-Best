@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart - HomeMade Pickles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home">Shop</a>
+            <a href="/cart" class="active">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <section class="container" style="max-width:800px;">
+        <h2 class="section-title">Your Cart</h2>
+        {% if not cart_items %}
+        <div class="card" style="text-align:center; padding:50px;">
+            <h3>Your cart is empty</h3>
+            <p>Looks like you haven't added any traditional treats yet.</p>
+            <a href="/home" class="btn" style="display:inline-block; margin-top:20px;">Start Shopping</a>
+        </div>
+        {% else %}
+        <div class="card" style="padding:30px;">
+            <table style="width:100%; text-align:left; border-collapse:collapse;">
+                <thead>
+                    <tr style="border-bottom:2px solid var(--primary); color:var(--primary-dark);">
+                        <th style="padding:15px 0;">Item</th>
+                        <th style="padding:15px 0;">Price</th>
+                        <th style="padding:15px 0;">Quantity</th>
+                        <th style="padding:15px 0; text-align:right;">Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item_id, item in cart_items.items() %}
+                    <tr style="border-bottom:1px solid #eee;">
+                        <td style="padding:15px 0; font-weight:600;">{{ item.name }}</td>
+                        <td style="padding:15px 0;">₹{{ item.price }}</td>
+                        <td style="padding:15px 0;">{{ item.quantity }}</td>
+                        <td style="padding:15px 0; text-align:right; font-weight:600;">₹{{ item.price * item.quantity }}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"
+                            style="padding:20px 0; text-align:right; font-size:1.2rem; font-weight:800; color:var(--primary-dark);">
+                            Total:</td>
+                        <td
+                            style="padding:20px 0; text-align:right; font-size:1.5rem; font-weight:800; color:var(--primary);">
+                            ₹{{ total }}</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div style="display:flex; justify-content:space-between; margin-top:30px;">
+                <a href="/clear_cart" class="btn btn-outline" style="color:#d32f2f; border-color:#d32f2f;">Clear
+                    Cart</a>
+                <a href="/success" class="btn">Proceed to Checkout</a>
+            </div>
+        </div>
+        {% endif %}
+    </section>
+
+</body>
+
+</html>

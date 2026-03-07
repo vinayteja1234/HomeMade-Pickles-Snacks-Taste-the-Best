@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Savory Snacks - HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home" class="active">Shop</a>
+            <a href="/cart">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <header class="hero" style="height: 40vh;">
+        <img src="{{ url_for('static', filename='images/snacks.png') }}" alt="Traditional Snacks" class="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" style="text-align:center; padding-top:40px;">
+            <h1 style="font-size:3.5rem;">Savory <span>Snacks</span></h1>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">Crispy Delights</h2>
+        <div class="products">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Murukku (Chakali)</h3>
+                    <p>Crispy, deep-fried rice and lentil snack.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹100</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="murukku">
+                            <input type="hidden" name="name" value="Murukku (Chakali)">
+                            <input type="hidden" name="price" value="100">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Spicy Mixture</h3>
+                    <p>A crunchy mix of sev, boondi, peanuts, and spices.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹120</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="spicy_mixture">
+                            <input type="hidden" name="name" value="Spicy Mixture">
+                            <input type="hidden" name="price" value="120">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Chekkalu (Rice Crackers)</h3>
+                    <p>Flavorful rice crackers infused with curry leaves and chili.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹150</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="chekkalu">
+                            <input type="hidden" name="name" value="Chekkalu">
+                            <input type="hidden" name="price" value="150">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

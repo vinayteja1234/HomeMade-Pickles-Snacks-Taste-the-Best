@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Us - HomeMade Pickles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home">Shop</a>
+            <a href="/about" class="active">About Us</a>
+            <a href="/contact_us">Contact</a>
+            <a href="/cart">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <section class="container" style="max-width:800px;">
+        <h2 class="section-title" style="font-size:3rem; margin-bottom:10px;">Our Heritage</h2>
+        <p class="section-subtitle" style="font-size:1.2rem;">Where tradition meets taste.</p>
+
+        <div class="card" style="padding:40px; margin-top:40px;">
+            <h3 style="color:var(--primary); font-size:1.8rem; margin-bottom:20px;">The Story of AuthenticFlavors</h3>
+            <p style="font-size:1.1rem; line-height:1.8; color:#444;">
+                It all started with a simple family recipe for <strong>Mango Aavakaaya</strong>, passed down through
+                three generations.
+                For decades, our grandmother’s kitchen was the heart of our household, filled with the aroma of freshly
+                roasted spices,
+                cold-pressed oils, and sun-dried ingredients.
+            </p>
+            <p style="font-size:1.1rem; line-height:1.8; color:#444;">
+                Today, <strong>AuthenticFlavors</strong> brings that very same warmth to your dining table.
+                We believe that true Indian culinary magic lies in patience and purity. That’s why we never compromise
+                on quality.
+                Every jar of pickle and every packet of snack is handmade in small batches using 100% natural,
+                locally-sourced ingredients
+                with absolutely zero artificial preservatives.
+            </p>
+            <div style="margin-top:40px; border-top:1px solid #eee; padding-top:30px;">
+                <h4 style="color:var(--accent); font-size:1.5rem; margin-bottom:15px;">Our Promise</h4>
+                <ul style="list-style:none; padding:0; font-size:1.1rem; line-height:2.0; color:#555;">
+                    <li>✓ Handcrafted in small batches to ensure consistent flavor</li>
+                    <li>✓ 100% natural spices without chemical additives</li>
+                    <li>✓ Traditional recipes preserved in their original form</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AuthenticFlavors | HomeMade Pickles & Snacks.</p>
+    </footer>
+
+</body>
+
+</html>

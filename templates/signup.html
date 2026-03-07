@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - HomeMade Pickles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home">Shop</a>
+        </div>
+        <div class="nav-actions">
+            <a href="/login" class="btn btn-outline">Login</a>
+            <a href="/signup" class="btn active">Sign Up</a>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-card">
+            <h2>Create an Account</h2>
+            {% if error %}
+            <div class="alert alert-danger"
+                style="color: red; margin-bottom: 15px; text-align: center; font-weight: bold;">
+                {{ error }}
+            </div>
+            {% endif %}
+            <form action="/signup" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="Create a password">
+                </div>
+                <button type="submit" class="btn" style="width:100%; margin-top:10px;">Sign Up</button>
+            </form>
+            <p style="margin-top:20px; color:#666;">Already have an account? <a href="/login"
+                    style="color:var(--primary); font-weight:600;">Login</a></p>
+        </div>
+    </div>
+
+</body>
+
+</html>

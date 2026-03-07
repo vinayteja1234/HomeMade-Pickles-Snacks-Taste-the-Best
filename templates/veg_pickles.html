@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vegetarian Pickles - HomeMade Pickles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home" class="active">Shop</a>
+            <a href="/cart">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <header class="hero" style="height: 40vh;">
+        <img src="{{ url_for('static', filename='images/veg_pickles.png') }}" alt="Veg Pickles" class="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" style="text-align:center; padding-top:40px;">
+            <h1 style="font-size:3.5rem;">Vegetarian <span>Pickles</span></h1>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">Our Bestsellers</h2>
+        <div class="products">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Mango Pickle (Aavakaaya)</h3>
+                    <p>Spicy, tangy Andhra style cut mango pickle.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹150</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="mango_pickle">
+                            <input type="hidden" name="name" value="Mango Pickle">
+                            <input type="hidden" name="price" value="150">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Lemon Pickle</h3>
+                    <p>Perfectly aged sun-dried lemon pickle.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹120</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="lemon_pickle">
+                            <input type="hidden" name="name" value="Lemon Pickle">
+                            <input type="hidden" name="price" value="120">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Gongura Pickle</h3>
+                    <p>Authentic red sorrel leaves pickle, a traditional delicacy.</p>
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <span style="font-size:1.5rem; font-weight:800; color:var(--primary);">₹180</span>
+                        <form action="/add_to_cart" method="POST" style="margin:0;">
+                            <input type="hidden" name="item_id" value="gongura_pickle">
+                            <input type="hidden" name="name" value="Gongura Pickle">
+                            <input type="hidden" name="price" value="180">
+                            <button type="submit" class="btn">Add to Cart</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

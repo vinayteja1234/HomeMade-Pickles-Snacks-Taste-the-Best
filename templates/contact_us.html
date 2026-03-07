@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - HomeMade Pickles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/" class="nav-brand">AuthenticFlavors</a>
+        <div class="nav-links">
+            <a href="/">Welcome</a>
+            <a href="/home">Shop</a>
+            <a href="/about">About Us</a>
+            <a href="/contact_us" class="active">Contact</a>
+            <a href="/cart">Cart <span
+                    style="background:var(--accent);color:#000;padding:2px 8px;border-radius:10px;font-size:0.8rem;">{{
+                    cart_count }}</span></a>
+        </div>
+    </nav>
+
+    <section class="container" style="max-width:800px;">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-subtitle">Have a question about our family recipes or bulk orders? Connect with us.</p>
+
+        <div class="card" style="padding:40px; margin-top:20px;">
+            <form action="/success" method="GET">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter email address">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="How can we help you?"
+                        style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 12px; font-family: inherit; font-size: 1rem; box-sizing: border-box;"></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div style="margin-top:40px; border-top:1px solid #eee; padding-top:20px; text-align:center;">
+                <p style="color:#666;"><strong>Email:</strong> support@authenticflavors.in</p>
+                <p style="color:#666;"><strong>Phone:</strong> +91 98765 43210</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 AuthenticFlavors | HomeMade Pickles & Snacks.</p>
+    </footer>
+
+</body>
+
+</html>

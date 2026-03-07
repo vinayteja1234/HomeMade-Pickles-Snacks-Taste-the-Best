@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeMade Pickles & Snacks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<nav class="navbar">
+    <a href="/" class="nav-brand">AuthenticFlavors</a>
+    <div class="nav-links">
+        <a href="/" class="active">Welcome</a>
+        <a href="/home">Shop</a>
+        <a href="/about">About Us</a>
+        <a href="/contact_us">Contact</a>
+    </div>
+    <div class="nav-actions">
+        <a href="/login" class="btn btn-outline">Login</a>
+        <a href="/signup" class="btn">Sign Up</a>
+    </div>
+</nav>
+
+<header class="hero">
+    <img src="{{ url_for('static', filename='images/hero_banner.png') }}" alt="Traditional Indian Pickles and Snacks" class="hero-img">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>Authentic <span>Homemade</span> Flavors</h1>
+        <p>Discover traditional pickles and snacks prepared with love, using authentic recipes passed down through generations. Elevate your meals with a touch of heritage and unparalleled taste.</p>
+        <a href="/home" class="btn">Explore Our Collection</a>
+    </div>
+</header>
+
+<section class="container">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <p class="section-subtitle">Only the finest ingredients, expertly crafted.</p>
+    <div class="products" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card" style="text-align:center; padding: 40px;">
+            <h3 style="color:var(--accent); font-size:2rem; margin-bottom:15px;">100%</h3>
+            <h4 style="font-size:1.2rem; color:var(--primary);">Natural Ingredients</h4>
+        </div>
+        <div class="card" style="text-align:center; padding: 40px;">
+            <h3 style="color:var(--accent); font-size:2rem; margin-bottom:15px;">#1</h3>
+            <h4 style="font-size:1.2rem; color:var(--primary);">Authentic Recipe</h4>
+        </div>
+        <div class="card" style="text-align:center; padding: 40px;">
+            <h3 style="color:var(--accent); font-size:2rem; margin-bottom:15px;">No</h3>
+            <h4 style="font-size:1.2rem; color:var(--primary);">Preservatives</h4>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 AuthenticFlavors | HomeMade Pickles & Snacks. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
